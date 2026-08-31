@@ -21,3 +21,6 @@ Configure LED2?
 Use a GPIO to get them all to talk to eachother???
 
 I'll update my mental model as I go.
+
+Need to actually make it start and link first.
+Need to learn what a vector table is before that though.
