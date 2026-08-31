@@ -23,3 +23,5 @@ I'm using nvim because I don't have time to learn another IDE
 Now that we have our setup to start, we can start programming main
 
 Need to read the datasheet/reference manual to find how to start a timer.
+
+HSI is the initial 'source' for sysclk after a reset
