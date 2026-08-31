@@ -12,16 +12,33 @@ Languages used: C
 
 Board used: NUCLEO-F446RE
 
-Current Objective: Set up tool-chain
-
-Time since started: 12:00
-
 ## How to build/flash/use:
 
 ### Dependencies 
 
-Tool-chain and setup will be found in the `/Tool-Chain` directory
+Tool-chain and setup are found in the `tool-chain.md` file
 
 ### Instructions
 
 **TBD**
+
+-----------------------------------------
+
+## Objective 0: Set up tool-chain 
+
+Status: COMPLETED
+
+Time started: 12:00
+
+Time finished: 12:23
+
+## Objective 1: Sample clock and heartbeat
+
+Status: IN PROGRESS
+
+Time started: 12:27 
+
+Time finished: TBD
+
+------------------------------------------
+
