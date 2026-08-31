@@ -16,7 +16,8 @@ Board used: NUCLEO-F446RE
 
 ### Dependencies 
 
-Tool-chain and setup are found in the `tool-chain.md` file
+Tool-chain is found in the `tool-chain.md` file
+Startup-firmware is found in the `/startup` directory
 
 ### Instructions
 
@@ -24,13 +25,13 @@ Tool-chain and setup are found in the `tool-chain.md` file
 
 -----------------------------------------
 
-## Objective 0: Set up tool-chain 
+## Objective 0: Set up tool-chain and startup firmware
 
 Status: COMPLETED
 
 Time started: 12:00
 
-Time finished: 12:23
+Time finished: 15: 30
 
 ## Objective 1: Sample clock and heartbeat
 
