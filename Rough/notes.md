@@ -38,3 +38,6 @@ Looking up some values, 1 MHz equals one microsecond.
 1000 microseconds equals to one millisecond, and 1000 milliseconds is a second.
 Our tick counter needs to get to 1000 before an interrupt happens. Interrupt should happen 1000 times, and we have the value we want.
 
+Reading how TIM2 works, we need to set PSC to 15 (because from my knowledge PSC starts its 'count' at 0, which represents divide by 1), and ARR to 999 (same thing. It starts at index 0)
+I'll need to figure out how to set the TIM2 registers to these values.
+
