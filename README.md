@@ -31,7 +31,7 @@ Status: COMPLETED
 
 Time started: 12:00
 
-Time finished: 15: 30
+Time finished: 15:30
 
 ## Objective 1: Sample clock and heartbeat
 
