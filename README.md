@@ -20,7 +20,7 @@ Time since started: 12:00
 
 ### Dependencies 
 
-**TBD**
+Tool-chain and setup will be found in the `/Tool-Chain` directory
 
 ### Instructions
 
