@@ -24,3 +24,8 @@ I'll update my mental model as I go.
 
 Need to actually make it start and link first.
 Need to learn what a vector table is before that though.
+
+Update: I know what a vector table is now.
+
+We go: MCU turns on -> calls CPU -> consults vector table -> finds reset handler and etc -> reset handler does the hard boot stuff -> main can run (this is where our actual logic is)
+
