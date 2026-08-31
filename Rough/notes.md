@@ -46,6 +46,8 @@ Then we'll configure TIM2 registers; TIMx_PSC, TIMx_ARR, TIMx_DIER, and TIMx_CR1
 
 We know that RCC starts at 0x40023800, we add the offset for CC_APB1ENR (0x40), to get 0x40023840.
 
+This is so much easier then asm
+
 
 
 
