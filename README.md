@@ -14,6 +14,8 @@ Board used: NUCLEO-F446RE
 
 Current Objective: Set up tool-chain
 
+Time since started: 12:00
+
 ## How to build/flash/use:
 
 ### Dependencies 
