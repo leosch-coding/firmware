@@ -25,3 +25,6 @@ Now that we have our setup to start, we can start programming main
 Need to read the datasheet/reference manual to find how to start a timer.
 
 HSI is the initial 'source' for sysclk after a reset
+
+It's clicked to me that to make our timer 1000 Hz, we need to derive a specific numerical value that will 'pass through' RCC and end up at 1000 Hz when it reaches the actual clock we're using.
+In this case, I've selected TIM2, since it seems like the easiest due to it being at the 'lowest' possible address in APB1
