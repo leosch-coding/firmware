@@ -48,7 +48,7 @@ We know that RCC starts at 0x40023800, we add the offset for CC_APB1ENR (0x40), 
 
 This is so much easier then asm
 
-
+The files compile and link. Now to test the actual firmware.
 
 
 
