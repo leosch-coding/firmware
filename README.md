@@ -37,7 +37,7 @@ Time finished: 15:30
 
 Status: IN PROGRESS
 
-Time started: 12:27 
+Time started: 15:30
 
 Time finished: TBD
 
