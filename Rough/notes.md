@@ -32,3 +32,9 @@ In this case, I've selected TIM2, since it seems like the easiest due to it bein
 To refine this, I now also understand that we're not passing in some arbitrary value at all. We're just configuring things to divide/multiply/etc this clock value to turn it into 1000 Hz.
 
 I could divide 16 MHz (the frequency of HSI which is our default counter for sysclk), but now that I realize I can just configure the TIM2 clock directly, I think that'd be easier.
+
+The plan is to divide 16 MHz (in TIM2) to 1 MHz (/16)
+Looking up some values, 1 MHz equals one microsecond.
+1000 microseconds equals to one millisecond, and 1000 milliseconds is a second.
+Our tick counter needs to get to 1000 before an interrupt happens. Interrupt should happen 1000 times, and we have the value we want.
+
