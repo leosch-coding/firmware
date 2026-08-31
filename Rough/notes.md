@@ -41,3 +41,8 @@ Our tick counter needs to get to 1000 before an interrupt happens. Interrupt sho
 Reading how TIM2 works, we need to set PSC to 15 (because from my knowledge PSC starts its 'count' at 0, which represents divide by 1), and ARR to 999 (same thing. It starts at index 0)
 I'll need to figure out how to set the TIM2 registers to these values.
 
+First we need to actually enable TIM2 by setting CC_APB1ENR bit 0, to 1.
+Then we'll configure TIM2 registers; TIMx_PSC, TIMx_ARR, TIMx_DIER, and TIMx_CR1.
+
+
+
