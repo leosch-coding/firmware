@@ -18,7 +18,7 @@ Linker is done, I'll just add in the reset handler and we can use default handle
 
 I'm using nvim because I don't have time to learn another IDE
 
-# Object 1: Making a heartbeat
+# Objective 1: Making a heartbeat
 
 Now that we have our setup to start, we can start programming main
 
