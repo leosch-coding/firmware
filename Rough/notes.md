@@ -6,7 +6,7 @@ In theory, this should be enough, but if not I can add onto the toolchain.
 Need to actually make it start and link first.
 Need to learn what a vector table is before that though.
 
-Update: I know what a vector table is now.
+I now understand that a vector table is essentially a table of pointers to specific things that we start-up with. Like our reset_handler
 
 We go: MCU turns on -> calls CPU -> consults vector table -> finds reset handler and etc -> reset handler does the hard boot stuff -> main can run (this is where our actual logic is)
 
