@@ -33,4 +33,6 @@ We need to find the stack pointer first to set up main. Looking at the address t
 
 I finished writing the vector table, now onto the linker
 
+Linker is done, I'll just add in the reset handler and we can use default handlers for everything else right now.
+
 
