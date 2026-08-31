@@ -44,5 +44,11 @@ I'll need to figure out how to set the TIM2 registers to these values.
 First we need to actually enable TIM2 by setting CC_APB1ENR bit 0, to 1.
 Then we'll configure TIM2 registers; TIMx_PSC, TIMx_ARR, TIMx_DIER, and TIMx_CR1.
 
+We know that RCC starts at 0x40023800, we add the offset for CC_APB1ENR (0x40), to get 0x40023840.
+
+
+
+
+
 
 
