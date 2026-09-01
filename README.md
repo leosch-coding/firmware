@@ -43,5 +43,12 @@ Time finished: 04:19
 
 ## Objective 2: An ADC driver
 
+Status: IN PROGRESS
+
+Time started: 06:08
+
+Time finished: TBD
+
 ------------------------------------------
+
 
