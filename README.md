@@ -47,9 +47,17 @@ Time finished: 12:18
 
 ## Objective 3: A threshold detector at 100Hz
 
-Status: IN PROGRESS
+Status: COMPLETED 
 
 Time started: 12:20
+
+Time finished: 20:31
+
+## Objective 4: Built-in test injection
+
+Status: IN PROGRESS
+
+Time Started: 20:31 
 
 Time finished: TBD
 
