@@ -50,6 +50,11 @@ This is so much easier then asm
 
 The files compile and link. Now to test the actual firmware.
 
+Oh my god that took so long. It works.
+
+I flipped the wrong bit.
+
+
 
 
 
