@@ -50,9 +50,8 @@ This is so much easier then asm
 
 The files compile and link. Now to test the actual firmware.
 
-Oh my god that took so long. It works.
+That took...a while. I finally figured out that I was flipping the wrong bit.
 
-I flipped the wrong bit.
 
 ## Objective 2: Setting up the ADC driver
 
