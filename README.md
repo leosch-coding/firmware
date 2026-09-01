@@ -43,9 +43,17 @@ Time finished: 04:19
 
 ## Objective 2: An ADC driver
 
-Status: IN PROGRESS
+Status: COMPLETED
 
 Time started: 06:08
+
+Time finished: 12:18
+
+## Objective 3: A threshold detector at 100Hz
+
+Status: IN PROGRESS
+
+Time started: 12:20
 
 Time finished: TBD
 
