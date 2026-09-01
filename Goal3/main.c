@@ -1,25 +1,24 @@
-// WIP: Be warned, this is VERY messy right now
-
 #include <stdint.h>
 #include <stdbool.h>
+#include <stdio.h>
 #include "adc.h"
 
 // Sets up our global-logic variables
 uint32_t tick_counter = 0;
 uint32_t offset = 0;
 uint32_t on_or_off = 0;
-int conversion_counter = 0;
 uint16_t total = 0;
+uint16_t current_sample = 0;
 uint16_t samples[16];
 int sample_index = 0;
-int past_15_ticks = 0;
-int above_threshold = 0;
+int sample_count = 0;
+int previous_was_above = 0;
+int detection = 0;
 
 // Sets up some important register pointers
 volatile uint32_t *GPIOA_MODER = (uint32_t *)0x40020000;
 volatile uint32_t *GPIOA_ODR = (uint32_t *)0x40020014;
 volatile uint32_t *TIM2_SR = (uint32_t *)0x40000010;
-
 
 void counter(void) {
     tick_counter++;
@@ -35,8 +34,12 @@ void counter(void) {
        while (adc_ready() != true) {
          
        }
+    // stores our current sample into a variable to be used
+    current_sample = adc_read();
+    
     // checks if we've gotten past 16 adc-checks
-    if (sample_index == 15 || past_15_ticks == 1) {
+    if (sample_count == 16) {
+
        // finds the accumulation of the samples so far
        total = samples[0] + samples[1] + samples[2] + samples[3] + samples[4] + samples[5] + samples[6] + samples[7] + samples[8] + samples[9] + samples[10] + samples[11] + samples[12] + samples[13] + samples[14] + samples[15];    
 
@@ -46,31 +49,54 @@ void counter(void) {
        // calculates threshold by adding 12 to the mean/noise_floor
        uint32_t threshold = noise_floor + 12;
 
-       // sets the 'past_15_ticks' state to true. Now we can always go through this if statement without fifteen counter needing to be at 15
-       past_15_ticks = 1;
+       // checks if the current sample is larger then the threshold
+       if (current_sample > threshold) {
+          // if the current sample is above the threshold, and the previous sample was above the threshold, trigger detection
+          if (previous_was_above == 1) {
+            
+             detection = 1;
+        
+          // if the current sample is above the threshold, but the previous sample was not, set previous_was_above to true
+          } else if (previous_was_above == 0) {
 
-       if (adc_read() > threshold) {
-         if (above_threshold == 1) {
-           // declaration placeholder
-       }}
-       else {
-         above_threshold = 1;
-      }
-    
-    // increments our index
-    samples[sample_index] = adc_read();
-    
-    if (sample_index == 15) {
-       sample_index = 0;
+             previous_was_above = 1;
+          
+          // if neither the current sample nor the previous is above the threshold, reset previous_was_above to false
+        } else {
+         previous_was_above = 0;
+        }
+
+       // checks if we've gotten two samples above the threshold
     } else {
+       // Sample count is below 16
+       // We print out 0 for each of our stats
+       printf("Noise_Floor: 0");
+       printf("Threshold: 0");
+       printf("Detection: 0");
+    }
+  }
+ }
+    // moves the current sample into the index
+    samples[sample_index] = current_sample;
+
+    // checks if the sample index is 15 (index starts at 0)
+    if (sample_index == 15) {
+
+       // Resets the index
+       sample_index = 0;
+
+    } else {
+       // Otherwise increments the index
        sample_index++;
+    }
+    
+    // checks if sample count is below 16 yet
+    if (sample_count < 16) {
+
+       // if so, increment it UP UNTIL 16, then stop
+       sample_count++;
     }  
 
-  } else {
-    // print 0 for noise floor
-    // print 0 for threshold
-    // print 0 for detection
-    }
     uint32_t elapsed = tick_counter - offset;
 
     if (elapsed >= 500) {
