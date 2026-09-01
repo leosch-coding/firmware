@@ -55,6 +55,12 @@ That took...a while. I finally figured out that I was flipping the wrong bit.
 
 ## Objective 2: Setting up the ADC driver
 
+I now know that I need to set up the peripheral's clock before I can use it.
+
+Bit 8, 9, and 10 of RCC_APB2ENR are used to configure the clock for ADC.
+
+Because we want temperature sensor data, we'll turn on the clock for ADC1.
+
 
 
 
