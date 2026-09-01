@@ -35,11 +35,29 @@ void adc_init(void) {
     *ADC_CR2 |= (1 << 0);
 }
 
+
 void adc_start(void) {
+    // Configures SWSTART, starting conversion of regular channels
+    volatile uint32_t *ADC_CR2 = (uint32_t *)0x40012008;
+    *ADC_CR2 |= (1 << 30);
 }
 
+
 bool adc_ready(void) {
+    // check for EOC
+    volatile uint32_t *ADC_SR = (uint32_t *)0x40012000;
+
+    if (*ADC_SR & (1 << 1)) {
+      return true;
+    } else {
+      return false;
+    }
 }
 
 uint16_t adc_read(void) {
+    // reads the converted data and returns it
+    volatile uint32_t *ADC_DR = (uint32_t *)0x4001204C;
+    uint32_t ret_value = *ADC_DR;
+
+    return ret_value;
 }
