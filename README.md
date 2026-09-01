@@ -35,11 +35,13 @@ Time finished: 15:30
 
 ## Objective 1: Sample clock and heartbeat
 
-Status: IN PROGRESS
+Status: COMPLETED
 
 Time started: 15:30
 
-Time finished: TBD
+Time finished: 04:19
+
+## Objective 2: 
 
 ------------------------------------------
 
