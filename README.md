@@ -41,7 +41,7 @@ Time started: 15:30
 
 Time finished: 04:19
 
-## Objective 2: 
+## Objective 2: An ADC driver
 
 ------------------------------------------
 
