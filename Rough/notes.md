@@ -69,5 +69,11 @@ We know our initial sysclk is 16MHz, we're gonna leave the two prescalars alone 
 
 This is mostly just busy work, aka, reading the reference manual/datasheet, finding registers, configuring registers, and repeat.
 
+## Objective 3: Setting a threshold detector
+
+This seems to be more state/logic related then firmware/embedded related, meaning I have an edge for this objective specifically.
+I hope I don't eat my words later.
+
+I'll start setting up the logic. I don't believe I need to consult the reference or the datasheet as much considering it's mostly programming this time.
 
 
