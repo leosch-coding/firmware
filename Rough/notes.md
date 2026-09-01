@@ -67,7 +67,7 @@ Configuring the ADCCLK, we gotta derive it via the sysclk passing through the AH
 
 We know our initial sysclk is 16MHz, we're gonna leave the two prescalars alone for now.
 
-
+This is mostly just busy work, aka, reading the reference manual/datasheet, finding registers, configuring registers, and repeat.
 
 
 
