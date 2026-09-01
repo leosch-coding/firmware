@@ -61,6 +61,8 @@ Bit 8, 9, and 10 of RCC_APB2ENR are used to configure the clock for ADC.
 
 Because we want temperature sensor data, we'll turn on the clock for ADC1.
 
+It has only fully clicked now that I can use the shift operator. That would've been nice to know about 10 hours ago. 
+
 
 
 
