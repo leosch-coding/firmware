@@ -63,6 +63,9 @@ Because we want temperature sensor data, we'll turn on the clock for ADC1.
 
 It has only fully clicked now that I can use the shift operator. That would've been nice to know about 10 hours ago. 
 
+Configuring the ADCCLK, we gotta derive it via the sysclk passing through the AHB prescalar and APB2 prescalar.
+
+We know our initial sysclk is 16MHz, we're gonna leave the two prescalars alone for now.
 
 
 
