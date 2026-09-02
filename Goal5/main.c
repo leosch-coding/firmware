@@ -1,18 +1,16 @@
-// Anything marked as 'AI-GENERATED' is commented out, as I do not know/understand UART, and do not want to present something I can't explain
 #include <stdint.h>
 #include <stdbool.h>
-// #include <stdio.h>
 #include "adc.h"
 
 // Output
-uint32_t tick = 0;
-uint16_t adc_raw = 0;
-uint32_t noise = 0;
-uint32_t thresh = 0;
-int det = 0;
-int isr_us = 0; 
-int isr_max = 0;
-int missed = 0;
+volatile uint32_t tick = 0;
+volatile uint16_t adc_raw = 0;
+volatile uint32_t noise = 0;
+volatile uint32_t thresh = 0;
+volatile int det = 0;
+volatile uint32_t isr_us = 0; 
+volatile uint32_t isr_max = 0;
+volatile int missed = 0;
 
 
 // Sets up our global-logic variables
@@ -28,15 +26,10 @@ int injection_index = 0;
 int added_injection = 0;
 int current_button_state = 1;
 int previous_button_state = 1;
-int elapsed_cycles = 0;
 int detect_state = 0;
 volatile int initial_cycle_count = 0;
 volatile int final_cycle_count = 0;
-
 volatile int ready = 0;
-
-volatile int uif_status = 0;
-
 
 // REGISTERS
 volatile uint32_t *GPIOA_MODER = (uint32_t *)0x40020000;
@@ -232,8 +225,8 @@ void counter(void) {
           // wait until adc_ready returns true
           while (adc_ready() != true) {  
           }
-            // stores our current sample into a variable to be used
-            adc_raw = adc_read();
+          // stores our current sample into a variable to be used
+          adc_raw = adc_read();
     }
    
     if (added_injection > 0) {
@@ -320,7 +313,7 @@ void counter(void) {
 
     final_cycle_count = *DWT_CYCCNT;
 
-    uif_status = (*TIM2_SR & (1 << 0));
+    int uif_status = (*TIM2_SR & (1 << 0));
 
     if (uif_status == 1){
        missed++;
@@ -427,7 +420,7 @@ void main(void) {
       } 
       
       // calculates isr_us
-      elapsed_cycles = final_cycle_count - initial_cycle_count; 
+      uint32_t elapsed_cycles = final_cycle_count - initial_cycle_count; 
       isr_us = elapsed_cycles / 16;
 
       // finds isr_max
