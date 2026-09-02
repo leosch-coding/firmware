@@ -2,73 +2,46 @@
 
 This is a repository for me to practice embedded/firmware programming
 
-I will update it as I make progress.
-
 Languages used: C
 
 Board used: NUCLEO-F446RE
 
-## How to build/flash/use:
+Compiler: arm-none-eabi-gcc
 
-### Dependencies 
+Linker: arm-none-eabi-ld
 
-Tool-chain is found in the `tool-chain.md` file
-Startup-firmware is found in the `/startup` directory
+Debugger/How I flashed it: arm-none-eabi-gdb
 
-### Instructions
+Connection to the board: OpenOCD
 
-**TBD**
+## Commands used (in order):
 
------------------------------------------
+**To Compile**:
 
-## Objective 0: Set up tool-chain and startup firmware
+arm-none-eabi-gcc -c main.c -mcpu=cortex-m4 -mthumb -o main.o
+arm-none-eabi-gcc -c adc.c -mcpu=cortex-m4 -mthumb -o adc.o
+arm-none-eabi-gcc -c startup.s -mcpu=cortex-m4 -mthumb -o startup.o
 
-Status: COMPLETED
+**To Link**:
 
-Time started: 12:00
+arm-none-eabi-gcc main.o adc.o startup.o -mcpu=cortex-m4 -mthumb -T linker.ld -nostdlib -o main.elf
 
-Time finished: 15:30
 
-## Goal 1: Sample clock and heartbeat
+**To flash**:
 
-Status: COMPLETED
+openocd -f interface/stlink.cfg -f target/stm32f4x.cfg
+arm-none-eabi-gdb main.elf
 
-Time started: 15:30
+(In gdb)
+target extended-remote localhost:3333
+monitor reset halt
+load
+monitor reset
+continue
 
-Time finished: 04:19
+## Extra Information
 
-## Goal 2: An ADC driver
+Interrupt pin used: PB5
 
-Status: COMPLETED
-
-Time started: 06:08
-
-Time finished: 12:18
-
-## Goal 3: A threshold detector at 100Hz
-
-Status: COMPLETED 
-
-Time started: 12:20
-
-Time finished: 20:31
-
-## Goal 4: Built-in test injection
-
-Status: COMPLETED 
-
-Time started: 20:31 
-
-Time finished: 10:40
-
-## Goal 5: Instrumentation
-
-Status: IN PROGRESS
-
-Time started: 10:40
-
-Time finished: TBD
-
-------------------------------------------
-
+How to open serial port: Out of time
 
