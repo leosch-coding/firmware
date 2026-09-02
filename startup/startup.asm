@@ -12,8 +12,12 @@
 .word Default_Handler @ Busfault
 .word Default_Handler @ UsageFault
 .word 0x00000000
+.word 0x00000000
+.word 0x00000000
+.word 0x00000000
 .word Default_Handler @ SVCall
 .word Default_Handler @ Debug_Montior
+.word 0x00000000
 .word Default_Handler @ PendSV
 .word Default_Handler @ Systick
 .word Default_Handler @ WWDG
@@ -44,7 +48,7 @@
 .word Default_Handler @ TIM1_UP_TIM10
 .word Default_Handler @ TIM1_TRG_COM_TIM11
 .word Default_Handler @ TIM1_CC
-.word Default_Handler @ TIM2
+.word TIM2_Interrupt_Handler @ TIM2
 .word Default_Handler @ TIM3
 .word Default_Handler @ TIM4
 .word Default_Handler @ I2C1_EV
@@ -120,6 +124,8 @@
 .global Reset_Handler
 .type Reset_Handler, %function
 
+.extern main
+
 Reset_Handler:
     ldr r0, =_data_end
     ldr r1, =_data_load
@@ -161,3 +167,15 @@ Reset_Handler:
 
 Default_Handler:
     b .
+
+
+.global TIM2_Interrupt_Handler
+.type TIM2_Interrupt_Handler, %function
+
+.extern counter
+
+TIM2_Interrupt_Handler:
+    push {r4, lr}
+    bl counter
+    pop {r4, lr}
+    bx lr
