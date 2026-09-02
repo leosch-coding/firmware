@@ -45,3 +45,4 @@ Interrupt pin used: PB5
 
 How to open serial port: Out of time
 
+Startup and linker file is found in `/startup`
