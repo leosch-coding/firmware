@@ -61,7 +61,7 @@ Time started: 20:31
 
 Time finished: 10:40
 
-## Goal 5: 
+## Goal 5: Instrumentation
 
 Status: IN PROGRESS
 
