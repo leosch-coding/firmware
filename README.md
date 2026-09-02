@@ -14,6 +14,8 @@ Debugger/How I flashed it: arm-none-eabi-gdb
 
 Connection to the board: OpenOCD
 
+IDE: nvim
+
 ## Commands used (in order):
 
 **To Compile**:
