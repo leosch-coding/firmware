@@ -29,7 +29,7 @@ Time started: 12:00
 
 Time finished: 15:30
 
-## Objective 1: Sample clock and heartbeat
+## Goal 1: Sample clock and heartbeat
 
 Status: COMPLETED
 
@@ -37,7 +37,7 @@ Time started: 15:30
 
 Time finished: 04:19
 
-## Objective 2: An ADC driver
+## Goal 2: An ADC driver
 
 Status: COMPLETED
 
@@ -45,7 +45,7 @@ Time started: 06:08
 
 Time finished: 12:18
 
-## Objective 3: A threshold detector at 100Hz
+## Goal 3: A threshold detector at 100Hz
 
 Status: COMPLETED 
 
@@ -53,11 +53,19 @@ Time started: 12:20
 
 Time finished: 20:31
 
-## Objective 4: Built-in test injection
+## Goal 4: Built-in test injection
+
+Status: COMPLETED 
+
+Time started: 20:31 
+
+Time finished: 10:40
+
+## Goal 5: 
 
 Status: IN PROGRESS
 
-Time Started: 20:31 
+Time started: 10:40
 
 Time finished: TBD
 
