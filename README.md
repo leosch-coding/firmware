@@ -1,8 +1,19 @@
-# Firmware Project
+# Firmware Projects
 
-This is a repository for me to practice embedded/firmware programming
+This is a repository for me to practice embedded/firmware programming.
+You know, if the name of the repo didn't make it obvious enough.
 
-Languages used: C
+## Temperature Sensor Anomaly Detection
+
+
+
+As of current, my main goal with this is to make it actually output stuff. I don't know UART, so that's next up to learn.
+Like usual, I'll update it as I go on.
+
+Languages used: 
+C
+ARM32
+
 
 Board used: NUCLEO-F446RE
 
