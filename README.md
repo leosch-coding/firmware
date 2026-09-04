@@ -45,6 +45,6 @@ continue
 
 Interrupt pin used: PB5
 
-How to open serial port: Out of time
+How to open serial port: I'll figure it out eventually
 
 Startup and linker file is found in `/startup`
